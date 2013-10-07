@@ -18,18 +18,12 @@
 	},
 
 	"permissions": [
-		//"http://*/*",
 		"http://srihawong.info/*",
 		"http://www.blognone.com/*",
 		"notifications",
 		"tabs",
-		//"topSites",
-		//"tts",
-		//"ttsEngine",
-		//"webNavigation",
 		"pushMessaging",
-		"cookies",
-		//"contextMenus"
+		"cookies"
 	],
 	"tts_engine": {
 	    "voices": [

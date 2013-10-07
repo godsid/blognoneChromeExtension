@@ -10,8 +10,8 @@ var debug = false;
 
 /* Google Analytics */
 var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-18384901-14']);
-_gaq.push(['_trackPageview','/ext/popup.html']);
+//_gaq.push(['_setAccount', 'UA-18384901-14']);
+//_gaq.push(['_trackPageview','/ext/popup.html']);
 
 if(localStorage.debug!=undefined&&localStorage.debug=='true'){
 	debug = true;
@@ -78,7 +78,7 @@ function randerNotification(items){
 	});
 }
 function getNotification(){
-	query("SELECT * FROM notification WHERE type IN ('newreview')  ORDER BY  reading ASC ,time DESC LIMIT 0,5 ",function(resp){
+	query("SELECT * FROM notification WHERE type IN ('content')  ORDER BY  reading ASC ,time DESC LIMIT 0,5 ",function(resp){
 		if(resp.rows.length>0){
 			$('.notification').hide();
 			randerNotification(resp.rows);
@@ -112,7 +112,7 @@ $('.header a').click(function(){
 	chrome.tabs.create({url:$(this).attr('href')});
 });
 
-
+/*
 setTimeout(function(){
 	(function() {
 	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -120,7 +120,7 @@ setTimeout(function(){
 	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
 },2000);
-
+*/
 
 /*
 // Check Login

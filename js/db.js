@@ -18,7 +18,7 @@ function createDatabase(){
 	query("DROP TABLE notification");
 	//Debug('Create Database Table notification');
 	query('CREATE TABLE IF NOT EXISTS notification (id integer primary key asc ,type string,data string, time integer, url string ,reading bool)');
-	query("INSERT INTO notification VALUES(1,'welcome','data',"+Math.ceil(new Date().getTime()/1000)+",'http://www.edtguide.com','false')");
+	query("INSERT INTO notification VALUES(1,'welcome','data',"+Math.ceil(new Date().getTime()/1000)+",'http://www.blognone.com','false')");
 }
 
 var transaction = {id:null};

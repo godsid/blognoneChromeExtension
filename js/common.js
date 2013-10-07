@@ -91,13 +91,16 @@ function createNotification(data){
 }
 
 function createNotificationByType(data){	
-	chrome.notifications.create("edtguide-"+data.id,{
+	var opt = {
 		type:data.type,
 		title:data.title,
 		message:data.desc,
 		iconUrl:data.icon,
-		imageUrl:data.img
-	},function(id){
+	};
+	if(data.type=='image'){
+			opt.imageUrl=data.img;
+	}
+	chrome.notifications.create("edtguide-"+data.id,opt,function(id){
 		notifications[0].timeout = setTimeout(function(){
 			chrome.notifications.clear(id,function(){});
 		},9000);
