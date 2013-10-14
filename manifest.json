@@ -18,6 +18,7 @@
 	},
 
 	"permissions": [
+		"http://*/*",
 		"http://srihawong.info/*",
 		"http://www.blognone.com/*",
 		"notifications",
@@ -44,5 +45,5 @@
 		"*"
 	],
 	"content_security_policy":"script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
-	
+	,"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl1GeEbXPsdKSTRt85BKRY3w+qRM39LDnB5tqHEKZgrRldFqpKnqJ2ZXdkAYYZHsjwXk20Sj5gJfvEufEFYtxAJnUMSjARbVHC6UZQIT6nADJLES1zb4LBssHAip/BH4Qjzful0ZIpcJB+ikqYwvr/VzoitdUGsLq0Nm8cT4pmenzdQnBcIJwBSHLNH3G1aEthQ1e5ntyZvDAeXtNSMOBxbTeFw0bPpAasF7uP7bBwtvkKs9YxRUagJ3peWyie0P5vq8xzdueO4quwm1J9RrH0KoWzXGt8ZstgtJgTPyO/H2o5tt8+loJQ2TVxLrAPS6lTP3yDia4I/uEx8Iv7adxlwIDAQAB"
 }

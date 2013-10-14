@@ -90,17 +90,24 @@ function createNotification(data){
 	notification.push(noti);
 }
 
-function createNotificationByType(data){	
+function createNotificationByType(data){
+	var str = data.title+" "+data.desc;
+	data.title = str.substr(0,35);
+	data.desc = str.substr(35,100);
+	if(typeof data.icon=='undefined'){
+		data.icon = 'images/icon128.png';
+	}
 	var opt = {
-		type:data.type,
+		type:data.notifytype,
 		title:data.title,
 		message:data.desc,
 		iconUrl:data.icon,
 	};
-	if(data.type=='image'){
+	console.log(opt);
+	if(data.notifytype=='image'){
 			opt.imageUrl=data.img;
 	}
-	chrome.notifications.create("edtguide-"+data.id,opt,function(id){
+	chrome.notifications.create("blognone-"+data.id,opt,function(id){
 		notifications[0].timeout = setTimeout(function(){
 			chrome.notifications.clear(id,function(){});
 		},9000);

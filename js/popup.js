@@ -35,13 +35,18 @@ function randerLogin(){
 	});
 }
 */
-function randerNotificationNewReview(item,newnode){
+function randerNotificationNewContent(item,newnode){
 	Debug('randerNotificationNewReview');
+	//console.log(item.data);
 	var data = JSON.parse(item.data);
+	//console.log(data);
+	if(typeof data.icon=='undefined'){
+		data.icon = 'images/icon128.png';
+	}
 	$(newnode).find('a:first').attr('href',data.url);
 	$(newnode).find('.txt-red').html('Reciew: '+data.title);
 	$(newnode).find('small').html(data.desc);
-	$(newnode).find('.thb-action img:first').attr('src',data.img);
+	$(newnode).find('.thb-action img:first').attr('src',(typeof data.img=="undefined"?data.icon:data.img));
 	$(newnode).find('figcaption').html('@'+data.title);
 	$(newnode).find('abbr').html(justTime(item.time));
 	if(item.reading=='true'){
@@ -50,6 +55,7 @@ function randerNotificationNewReview(item,newnode){
 	return newnode;
 }
 function randerNotification(items){
+	
 	if(debug){
 		Debug('rander Notification');
 	}
@@ -60,8 +66,8 @@ function randerNotification(items){
 		var item = items.item(i);
 		var newnode = $(template).clone();
 		switch(item.type){
-			case 'newreview':
-				newnode = randerNotificationNewReview(item,newnode);
+			case 'content':
+				newnode = randerNotificationNewContent(item,newnode);
 				break;
 			default:
 				break;
@@ -71,8 +77,6 @@ function randerNotification(items){
 	delete newnode;
 	delete template;
 	delete item;
-	delete who;
-	delete at;
 	$('.notification li a').click(function(){
 		chrome.tabs.create({url:$(this).attr('href')});
 	});
@@ -89,11 +93,10 @@ function getNotification(){
 			$('.notification .list').mouseout(function(){
 				$(this).removeClass('over');
 			});
-			
 			$('.notification .list').click(function(e){
 				_gaq.push(['_trackEvent','popup_review','clicked']);
-				
 				chrome.tabs.create({url:$(this).find('.detail a:first').attr('href')});
+				window.close();
 			});
 		}else{
 			//chrome.tabs.create({url:wwwurl});
