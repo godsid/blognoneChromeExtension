@@ -44,7 +44,7 @@ function randerNotificationNewContent(item,newnode){
 		data.icon = 'images/icon128.png';
 	}
 	$(newnode).find('a:first').attr('href',data.url);
-	$(newnode).find('.txt-red').html('Reciew: '+data.title);
+	$(newnode).find('.txt-red').html(data.title);
 	$(newnode).find('small').html(data.desc);
 	$(newnode).find('.thb-action img:first').attr('src',(typeof data.img=="undefined"?data.icon:data.img));
 	$(newnode).find('figcaption').html('@'+data.title);
@@ -80,6 +80,7 @@ function randerNotification(items){
 	$('.notification li a').click(function(){
 		chrome.tabs.create({url:$(this).attr('href')});
 	});
+
 }
 function getNotification(){
 	query("SELECT * FROM notification WHERE type IN ('content')  ORDER BY  reading ASC ,time DESC LIMIT 0,5 ",function(resp){
@@ -136,4 +137,16 @@ chrome.cookies.get({url :wwwurl,name:'WCC_user'},function(cookie){
 		getNotification();
 	}
 });
+*/
+
+/*
+(function($){
+	$(window).load(function(){
+		$(".content").mCustomScrollbar({
+			scrollButtons:{
+				enable:true
+			}
+		});
+	});
+})(jQuery);
 */

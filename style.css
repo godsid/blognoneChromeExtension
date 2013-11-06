@@ -50,3 +50,6 @@ a:hover .review-img{opacity: 1;filter: none;box-shadow: 0 0 0 1px #970127, 0 0 0
 .place-rate{position: relative;width:100px;clear: both;height: 20px;padding: 5px 0 2px 30px;background: url(../images/icn-set-place.png) 0 -3px no-repeat;left:60px}
 .rating-star{position: relative;float: left;margin: 0 10px 0 0;width: 100px;height: 20px;background: url(../images/rating-star.png) 0 0 no-repeat}
 .score{position: absolute;top: 0;left: 0;height: 20px;background: url(../images/rating-star.png) 0 -20px no-repeat;text-indent: -9999px}
+
+
+.content .mCSB_container{margin-right:10px;}

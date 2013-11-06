@@ -88,6 +88,7 @@ function createNotification(data){
 	};
 	noti.show();
 	notification.push(noti);
+	document.getElementById('NotificationAlert').play();
 }
 
 function createNotificationByType(data){
@@ -109,8 +110,10 @@ function createNotificationByType(data){
 	}
 	chrome.notifications.create("blognone-"+data.id,opt,function(id){
 		notifications[0].timeout = setTimeout(function(){
-			chrome.notifications.clear(id,function(){});
+			chrome.notifications.clear(id,function(){
+			});
 		},9000);
 	});
+	document.getElementById('NotificationAlert').play();
 }
 
