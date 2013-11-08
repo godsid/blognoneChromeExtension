@@ -53,3 +53,9 @@ a:hover .review-img{opacity: 1;filter: none;box-shadow: 0 0 0 1px #970127, 0 0 0
 
 
 .content .mCSB_container{margin-right:10px;}
+.follow-us{position:relative;clear:both;margin:0 auto;width:130px;height:28px;padding:6px 0 0 71px;background:url(images/follow.png) no-repeat}
+.follow-us li{float:left;list-style-type:none;margin:0 4px 0 0;padding:0}
+.follow-us li a{display:block;width:26px;height:26px;text-indent:-9999px;background:url(images/follow.png) -71px -6px no-repeat}
+.follow-us li.tw a{background-position:-101px -6px}
+.follow-us li.gg a{background-position:-131px -6px}
+.follow-us li.yt a{background-position:-161px -6px}

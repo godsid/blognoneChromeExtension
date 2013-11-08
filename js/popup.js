@@ -16,7 +16,6 @@ var _gaq = _gaq || [];
 if(localStorage.debug!=undefined&&localStorage.debug=='true'){
 	debug = true;
 }
-
 /*
 function randerLogin(){
 	$('.login').show();
@@ -112,9 +111,10 @@ function getNotification(){
 }
 getNotification();
 
-$('.header a').click(function(){
+$('.header a,.follow-us a').click(function(){
 	chrome.tabs.create({url:$(this).attr('href')});
 });
+
 
 /*
 setTimeout(function(){
